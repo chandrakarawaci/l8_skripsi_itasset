@@ -50,6 +50,8 @@ Route::get('/admin/dashboard', [App\Http\Controllers\PenggunaController::class, 
 Route::get('/admin/list-pengguna', [App\Http\Controllers\PenggunaController::class, 'index'])->name('pengguna.index');
 Route::get('/admin/create-pengguna', [App\Http\Controllers\PenggunaController::class, 'create'])->name('pengguna.create');
 Route::get('/admin/asset-report', [App\Http\Controllers\AssetControllers::class, 'assetReport'])->name('admin.asset-report');
+Route::get('/admin/import-asset-form', [App\Http\Controllers\AssetControllers::class, 'showImportAsetForm'])->name('admin.import-asset-form');
+Route::post('/admin/import-asset', [App\Http\Controllers\AssetControllers::class, 'importAset'])->name('admin.import');
 
 // Pengguna
 Route::post('/pengguna/store', [App\Http\Controllers\PenggunaController::class, 'store'])->name('pengguna.store');
@@ -60,7 +62,6 @@ Route::get('/pengguna/{pengguna}', [App\Http\Controllers\PenggunaController::cla
 
 // Asset
 Route::get('/asset/create', [App\Http\Controllers\AssetControllers::class, 'create'])->name('asset.create');
-Route::get('/asset/import', [App\Http\Controllers\AssetControllers::class, 'import'])->name('asset.import');
 Route::post('/asset/store', [App\Http\Controllers\AssetControllers::class, 'store'])->name('asset.store');
 Route::get('/asset/{asset}/edit', [App\Http\Controllers\AssetControllers::class, 'edit'])->name('asset.edit');
 Route::match(['put', 'patch'],'/asset/{id}', [App\Http\Controllers\AssetControllers::class, 'update'])->name('asset.update');

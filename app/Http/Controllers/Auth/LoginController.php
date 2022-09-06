@@ -40,7 +40,7 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest')->except('logout');    
+        $this->middleware('guest')->except('logout');
     }
 
     public function username()
@@ -69,14 +69,13 @@ class LoginController extends Controller
         $status = User::where('email',$credentials['email'])->value('status');
         if($status == 'enabled'){
             if (Auth::attempt($credentials)) {
-                //return redirect()->route('home');
                 if (Auth::user()->level == 'admin'){
                     return redirect('admin/dashboard');
                 }elseif(Auth::user()->level == 'user'){
                     return redirect('user/dashboard');
                 }
             }
-    
+
         }else{
             return redirect("login");
         }

@@ -30,7 +30,7 @@
         </div> --}}
       </div>
     <!-- eCommerce statistic -->
-    <!--/ eCommerce statistic -->   
+    <!--/ eCommerce statistic -->
     <div class="row">
       <div class="col-xl-3 col-lg-6 col-12">
         <div class="card pull-up">
@@ -144,7 +144,6 @@
                       <table class="table table-striped table-bordered dataex-html5-export-print">
                         <thead>
                           <tr>
-                            <th>NRP</th>
                             <th>Name</th>
                             <th>Email</th>
                             <th>Level</th>
@@ -155,21 +154,20 @@
                         <tbody>
                           @foreach ($users as $data )
                             <tr>
-                              <td>{{ $data->nrp }}</td>
                               <td>{{ $data->name }}</td>
                               <td>{{ $data->email }}</td>
                               <td>{{ $data->level }}</td>
                               <td>{{ $data->status }}</td>
                               <td class="text-center">
                                   <form action="{{ route('pengguna.destroy',$data->id) }}" method="POST">
-                  
+
                                     <a class="btn btn-info btn-sm" href="{{ route('admin.show',$data->id) }}"><i class="la la-search"></i></a>
-                  
+
                                       <a class="btn btn-primary btn-sm" href="{{ route('pengguna.edit',$data->id) }}"><i class="la la-edit"></i></a>
-                  
+
                                       @csrf
                                       {{-- @method('DELETE') --}}
-                  
+
                                       <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')"><i class="la la-trash"></i></button>
                                   </form>
                               </td>
