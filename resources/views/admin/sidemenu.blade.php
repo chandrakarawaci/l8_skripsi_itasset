@@ -8,11 +8,11 @@
 
       <li class=" nav-item"><a href="index.html"><i class="la la-database"></i><span class="menu-title" data-i18n="nav.dash.main">Asset</span></a>
         <ul class="menu-content">
-          <li class="menu-item"><a class="menu-item" href="register-asset" data-i18n="nav.dash.ecommerce">Register Asset</a>
+          <li class="menu-item"><a class="menu-item" href="{{ route('asset.create') }}" data-i18n="nav.dash.ecommerce">Register Asset</a>
           </li>
-          <li><a class="menu-item" href="import-asset" data-i18n="nav.dash.crypto">Import Asset</a>
+          <li><a class="menu-item" href="{{ route('asset.import') }}" data-i18n="nav.dash.crypto">Import Asset</a>
           </li>
-          <li><a class="menu-item" href="{{ route('admin.report-asset') }}" data-i18n="nav.dash.sales">Report Asset</a>
+          <li><a class="menu-item" href="{{ route('admin.asset-report') }}" data-i18n="nav.dash.sales">Report Asset</a>
           </li>
         </ul>
       </li>

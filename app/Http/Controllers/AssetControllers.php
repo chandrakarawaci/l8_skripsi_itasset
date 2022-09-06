@@ -23,12 +23,23 @@ class AssetControllers extends Controller
         return view ('admin.report-asset',['vasset' => $asset]);
     }
 
+     public function assetReport()
+    {
+        $asset = AssetModel::all();
+        return view ('admin.report-asset',['vasset' => $asset]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function create()
+    {
+        return view ('admin.register-asset');
+
+    }
+    public function import()
     {
         return view ('admin.register-asset');
     }
