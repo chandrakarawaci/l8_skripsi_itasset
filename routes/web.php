@@ -155,3 +155,6 @@ Route::get('/admin/create-pengguna', [App\Http\Controllers\PenggunaController::c
 // Akhir Route Manager
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

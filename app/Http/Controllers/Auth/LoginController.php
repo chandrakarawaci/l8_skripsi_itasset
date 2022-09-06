@@ -5,11 +5,6 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use App\Models\User;
-
-use function PHPUnit\Framework\returnSelf;
 
 class LoginController extends Controller
 {
@@ -31,8 +26,8 @@ class LoginController extends Controller
      *
      * @var string
      */
-    //protected $redirectTo = RouteServiceProvider::HOME;
-    // protected $redirectTo = '/dashboard';
+    protected $redirectTo = RouteServiceProvider::HOME;
+
     /**
      * Create a new controller instance.
      *
@@ -42,60 +37,4 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
-
-    public function username()
-    {
-        return 'email';
-    }
-        // Custom Form Login
-    public function showLoginForm()
-    {
-        $page = "login";
-        return view('auth.login',compact('page'));
-    }
-
-    public function postLogin()
-    {
-        return view('auth.login');
-    }
-
-    public function login(Request $request)
-    {
-        $request->validate([
-            'email' => 'required',
-            'password' => 'required',
-        ]);
-
-        $credentials = $request->only('email', 'password');
-        if (Auth::attempt($credentials)) {
-            if (Auth::user()->level == 'admin'){
-                return redirect('admin/dashboard');
-            }elseif(Auth::user()->level == 'user'){
-                return redirect('user/dashboard');
-            }elseif(Auth::user()->level == 'manager'){
-                return redirect('manager/dashboard');
-            }
-        }else{
-            return redirect("login");
-        }
-        return redirect("login");
-    }
-
-    public function logout(Request $request)
-    {
-        $this->guard()->logout();
-
-        $request->session()->invalidate();
-
-        $request->session()->regenerateToken();
-
-        if ($response = $this->loggedOut($request)) {
-            return $response;
-        }
-
-        return $request->wantsJson()
-            ? new JsonResponse([], 204)
-            : redirect('/');
-    }
-      
 }
