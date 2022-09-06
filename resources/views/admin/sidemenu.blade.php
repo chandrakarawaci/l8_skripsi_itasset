@@ -49,14 +49,14 @@
           </li>
           </ul>
       </li>
-      <li class=" nav-item"><a href="#"><i class="la la-search"></i><span class="menu-title" data-i18n="nav.dash.main">Audit</span></a>
+      <li class="nav-item"><a href="#"><i class="la la-search"></i><span class="menu-title" data-i18n="nav.dash.main">Audit</span></a>
         <ul class="menu-content">
           <li class="menu-item"><a class="menu-item" href="audit-asset" data-i18n="nav.dash.ecommerce">Audit Asset</a>
           </li>
           <li><a class="menu-item" href="report-audit" data-i18n="nav.dash.crypto">Report Audit</a>
           </li>
         </ul>
-        <li class="active"><a href="user-management"><i class="la la-user"></i><span class="menu-title" data-i18n="nav.scrumboard.main">User Management</span></a>
+        <li class="menu-item"><a href="{{ route('logout') }}"><i class="la la-user"></i><span class="menu-title" data-i18n="nav.scrumboard.main">Logout</span></a>
       </li>
       </li>
 
