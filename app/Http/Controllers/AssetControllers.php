@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\AssetModel;
+use App\Traits\AutoNumber;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Session;
@@ -14,6 +15,9 @@ class AssetControllers extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    use AutoNumber;
+
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
@@ -38,8 +42,8 @@ class AssetControllers extends Controller
      */
     public function create()
     {
-        return view ('admin.register-asset');
-
+        $no_req = $this->getMaintenanceAssetNo();
+        return view ('admin.register-asset',['no_reqs' => '$no_req']);
     }
 
     public function showImportAsetForm()
