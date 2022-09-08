@@ -17,7 +17,7 @@ class PenggunaController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest')->except('logout');    
+        $this->middleware('guest')->except('logout');
     }
 
     public function index()
@@ -76,10 +76,10 @@ class PenggunaController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show(User $pengguna) 
+    public function show(User $pengguna)
     {
         return view('admin.show',compact('pengguna'));
-        // dd($pengguna->nrp);
+        //dd($pengguna->id);
     }
 
     /**
@@ -91,7 +91,7 @@ class PenggunaController extends Controller
     public function edit(User $pengguna)
     {
         return view('admin.edit', compact('pengguna'));
-        //dd($id);    
+        //dd($id);
     }
 
     /**
@@ -128,7 +128,7 @@ class PenggunaController extends Controller
                 'password' => Hash::make($request['password'])
             ]);
                 return redirect()->route('pengguna.index');
-        } 
+        }
         //return redirect()->route('pengguna.index')->with('Succes','Data Berhasil di Update');
     }
 

@@ -4,7 +4,7 @@
       <ul class="nav navbar-nav flex-row">
         <li class="nav-item mobile-menu d-md-none mr-auto"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="ft-menu font-large-1"></i></a></li>
         <li class="nav-item">
-          <a class="navbar-brand" href="index.html">
+          <a class="navbar-brand" href="#">
             <img class="brand-logo" alt="modern admin logo" src="{{ asset('modernadmin/app-assets/images/logo/logo.png') }}">
             <h3 class="brand-text">{{ config('app.name') }}</h3>
           </a>
@@ -23,8 +23,8 @@
         <ul class="nav navbar-nav float-right">
           <li class="dropdown dropdown-user nav-item">
             <a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
-              <span class="mr-1">[{{ Auth::user()->level }}],
-                <span class="user-name text-bold-700">{{ Auth::user()->name }}</span>
+              <span class="mr-1">
+                <span class="user-name text-bold-400">{{ Auth::user()->name }}, [{{ Auth::user()->level }}]</span>
               </span>
               <span class="avatar avatar-online">
                 <img src="{{ asset('modernadmin/app-assets/images/portrait/small/avatar-s-19.png') }}" alt="avatar"><i></i></span>

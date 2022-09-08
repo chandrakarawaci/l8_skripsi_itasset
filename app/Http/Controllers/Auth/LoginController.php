@@ -6,10 +6,10 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\ValidationException;
 use App\Models\User;
-
-use function PHPUnit\Framework\returnSelf;
 
 class LoginController extends Controller
 {
@@ -31,8 +31,8 @@ class LoginController extends Controller
      *
      * @var string
      */
-    //protected $redirectTo = RouteServiceProvider::HOME;
-    // protected $redirectTo = '/dashboard';
+    protected $redirectTo = RouteServiceProvider::HOME;
+
     /**
      * Create a new controller instance.
      *
@@ -45,18 +45,17 @@ class LoginController extends Controller
 
     public function username()
     {
-        return 'email';
+        //return 'email';
+        return 'nrp';
     }
-        // Custom Form Login
-    public function showLoginForm()
-    {
-        $page = "login";
-        return view('auth.login',compact('page'));
+        //custom form login
+    public function showLoginForm(){
+            $page = "login";
+            return view('auth.login',compact('page'));
     }
 
-    public function postLogin()
-    {
-        return view('auth.login');
+    public function postLogin(){
+            return view('auth.login');
     }
 
     public function login(Request $request)
@@ -67,14 +66,18 @@ class LoginController extends Controller
         ]);
 
         $credentials = $request->only('email', 'password');
-        if (Auth::attempt($credentials)) {
-            if (Auth::user()->level == 'admin'){
-                return redirect('admin/dashboard');
-            }elseif(Auth::user()->level == 'user'){
-                return redirect('user/dashboard');
-            }elseif(Auth::user()->level == 'manager'){
-                return redirect('manager/dashboard');
+        $status = User::where('email',$credentials['email'])->value('status');
+        if($status == 'enabled'){
+            if (Auth::attempt($credentials)) {
+                if (Auth::user()->level == 'admin'){
+                    return redirect('admin/dashboard');
+                }elseif(Auth::user()->level == 'manager'){
+                    return redirect('manager/dashboard');
+                }elseif(Auth::user()->level == 'user'){
+                    return redirect('user/dashboard');
+                }
             }
+
         }else{
             return redirect("login");
         }
@@ -97,5 +100,4 @@ class LoginController extends Controller
             ? new JsonResponse([], 204)
             : redirect('/');
     }
-      
 }
