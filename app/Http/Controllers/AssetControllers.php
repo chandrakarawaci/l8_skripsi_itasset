@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\AssetModel;
+use App\Models\MaintenanceAssetModel;
+use App\Models\RequestAssetModel;
+use App\Models\ReturnAssetModel;
 use App\Traits\AutoNumber;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
@@ -44,6 +47,24 @@ class AssetControllers extends Controller
     {
         $no_req = $this->getMaintenanceAssetNo();
         return view ('admin.register-asset',['no_reqs' => '$no_req']);
+    }
+
+    public function createMaintenanceAsset()
+    {
+        $cek = MaintenanceAssetModel::count();
+        if($cek == 0){
+            $urut = '1000001';
+            $req_m_no = 'REQMN' . $this->getYearMonth() . $urut;
+            //return view ('admin.register-asset',['req_m_nos' => '$req_m_no']);
+            dd($req_m_no);
+        }else{
+            $get = MaintenanceAssetModel::all()->last();
+            $urut = (int)substr($get->request_mtn_no, -7) + 1;
+            $req_m_no = 'REQMN'.$this->getYearMonth().$urut;
+            //return view ('admin.register-asset',['req_m_nos' => '$req_m_no']);
+            dd($req_m_no);
+        }
+
     }
 
     public function showImportAsetForm()

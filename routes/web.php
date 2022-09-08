@@ -61,6 +61,7 @@ Route::post('/pengguna/{id}', [App\Http\Controllers\PenggunaController::class, '
 Route::get('/pengguna/{pengguna}', [App\Http\Controllers\PenggunaController::class, 'show'])->name('pengguna.show');
 
 // Asset
+Route::get('/admin/create-maintenance-asset', [App\Http\Controllers\AssetControllers::class, 'createMaintenanceAsset'])->name('admin.create-maintenance-asset');
 Route::get('/asset/create', [App\Http\Controllers\AssetControllers::class, 'create'])->name('asset.create');
 Route::post('/asset/store', [App\Http\Controllers\AssetControllers::class, 'store'])->name('asset.store');
 Route::get('/asset/{asset}/edit', [App\Http\Controllers\AssetControllers::class, 'edit'])->name('asset.edit');
