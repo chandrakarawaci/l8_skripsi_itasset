@@ -53,6 +53,13 @@ Route::get('/admin/asset-report', [App\Http\Controllers\AssetControllers::class,
 Route::get('/admin/import-asset-form', [App\Http\Controllers\AssetControllers::class, 'showImportAsetForm'])->name('admin.import-asset-form');
 Route::post('/admin/import-asset', [App\Http\Controllers\AssetControllers::class, 'importAset'])->name('admin.import');
 
+Route::get('/admin/request-asset', [App\Http\Controllers\AssetControllers::class, 'requestAsset'])->name('admin.request-asset');
+Route::get('/admin/report-request', [App\Http\Controllers\AssetControllers::class, 'reportRequest'])->name('admin.report-request');
+Route::get('/admin/return-asset', [App\Http\Controllers\AssetControllers::class, 'returnAsset'])->name('admin.return-asset');
+Route::get('/admin/report-return', [App\Http\Controllers\AssetControllers::class, 'reportReturn'])->name('admin.report-return');
+Route::get('/admin/request-maintenance', [App\Http\Controllers\AssetControllers::class, 'requestMaintenance'])->name('admin.request-maintenance');
+Route::get('/admin/report-maintenance', [App\Http\Controllers\AssetControllers::class, 'reportMaintenance'])->name('admin.report-maintenance');
+
 // Pengguna
 Route::post('/pengguna/store', [App\Http\Controllers\PenggunaController::class, 'store'])->name('pengguna.store');
 Route::get('/pengguna/{pengguna}/edit', [App\Http\Controllers\PenggunaController::class, 'edit'])->name('pengguna.edit');

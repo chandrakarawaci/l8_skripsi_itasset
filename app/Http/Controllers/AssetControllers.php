@@ -36,9 +36,46 @@ class AssetControllers extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function requestAsset()
+    {
+        return view ('admin.request-asset');
+
+    }
+
+    public function reportRequest()
+    {
+        return view ('admin.report-request');
+
+    }
+
+    public function returnAsset()
+    {
+        return view ('admin.return-asset');
+
+    }
+
+    public function reportReturn()
+    {
+        return view ('admin.report-return');
+
+    }
+
     public function create()
     {
         return view ('admin.register-asset');
+
+    }
+
+    public function requestMaintenance()
+    {
+        return view ('admin.request-maintenance');
+
+    }
+
+    public function reportMaintenance()
+    {
+        return view ('admin.report-maintenance');
 
     }
 
