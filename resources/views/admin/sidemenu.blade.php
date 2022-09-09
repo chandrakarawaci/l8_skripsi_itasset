@@ -27,7 +27,7 @@
       </li>
       <li class=" nav-item"><a href="#"><i class="la la-sign-in"></i><span class="menu-title" data-i18n="nav.dash.main">Request</span></a>
         <ul class="menu-content">
-          <li class="menu-item"><a class="menu-item" href="request-asset" data-i18n="nav.dash.ecommerce">Request Asset</a>
+          <li class="menu-item"><a class="menu-item" href="{{ route('req_asset.create') }}" data-i18n="nav.dash.ecommerce">Request Asset</a>
           </li>
           <li><a class="menu-item" href="report-request" data-i18n="nav.dash.crypto">Report Request</a>
           </li>
@@ -35,7 +35,7 @@
       </li>
      <li class=" nav-item"><a href="#"><i class="la la-retweet"></i><span class="menu-title" data-i18n="nav.dash.main">Return</span></a>
         <ul class="menu-content">
-          <li class="menu-item"><a class="menu-item" href="return-asset" data-i18n="nav.dash.ecommerce">Return Asset</a>
+          <li class="menu-item"><a class="menu-item" href="{{ route ('return_asset.create') }}" data-i18n="nav.dash.ecommerce">Return Asset</a>
           </li>
           <li><a class="menu-item" href="report-return" data-i18n="nav.dash.crypto">Report Return</a>
           </li>
@@ -43,7 +43,7 @@
       </li>
       <li class=" nav-item"><a href="#"><i class="la la-wrench"></i><span class="menu-title" data-i18n="nav.dash.main">Maintenance</span></a>
         <ul class="menu-content">
-          <li class="menu-item"><a class="menu-item" href="request-maintenance" data-i18n="nav.dash.ecommerce">Request Maintenance</a>
+          <li class="menu-item"><a class="menu-item" href="{{ route ('maintenance_asset.create') }}" data-i18n="nav.dash.ecommerce">Request Maintenance</a>
           </li>
           <li><a class="menu-item" href="report-maintenance" data-i18n="nav.dash.crypto">Report Maintenance</a>
           </li>

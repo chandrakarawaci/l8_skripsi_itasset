@@ -12,14 +12,6 @@
           <h3 class="content-header-title">Asset Registration Form</h3>
           <div class="row breadcrumbs-top">
             <div class="breadcrumb-wrapper col-12">
-              <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">Home</a>
-                </li>
-                <li class="breadcrumb-item"><a href="#">Asset</a>
-                </li>
-                <li class="breadcrumb-item active"><a href="#">Register Asset</a>
-                </li>
-              </ol>
             </div>
           </div>
         </div>
@@ -51,7 +43,7 @@
                     </div> --}}
                     <form class="form">
                       <div class="form-body">
-                        <h4 class="form-section"><i class="ft-user"></i> Personal Info</h4>
+                        
                         <div class="form-group">
                           <label for="companyName">Asset ID</label>
                           <input type="text" id="companyName" class="form-control" placeholder="Asset ID"

@@ -6,6 +6,9 @@ use App\Http\Controllers\SiswaControllers;
 use App\Http\Controllers\AssetControllers;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\RequestAssetController;
+use App\Http\Controllers\ReturnAssetController;
+use App\Http\Controllers\RequestMaintenanceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,7 +56,7 @@ Route::get('/admin/asset-report', [App\Http\Controllers\AssetControllers::class,
 Route::get('/admin/import-asset-form', [App\Http\Controllers\AssetControllers::class, 'showImportAsetForm'])->name('admin.import-asset-form');
 Route::post('/admin/import-asset', [App\Http\Controllers\AssetControllers::class, 'importAset'])->name('admin.import');
 
-Route::get('/admin/request-asset', [App\Http\Controllers\AssetControllers::class, 'requestAsset'])->name('admin.request-asset');
+// Route::get('/admin/request-asset', [App\Http\Controllers\RequestAssetController::class, 'create'])->name('admin.request-asset');
 Route::get('/admin/report-request', [App\Http\Controllers\AssetControllers::class, 'reportRequest'])->name('admin.report-request');
 Route::get('/admin/return-asset', [App\Http\Controllers\AssetControllers::class, 'returnAsset'])->name('admin.return-asset');
 Route::get('/admin/report-return', [App\Http\Controllers\AssetControllers::class, 'reportReturn'])->name('admin.report-return');
@@ -75,9 +78,14 @@ Route::match(['put', 'patch'],'/asset/{id}', [App\Http\Controllers\AssetControll
 Route::post('/asset/{id}', [App\Http\Controllers\AssetControllers::class, 'destroy'])->name('asset.destroy');
 Route::get('/asset/{asset}', [App\Http\Controllers\AssetControllers::class, 'show'])->name('asset.show');
 
+//Request Asset
+Route::resource('req_asset',RequestAssetController::class);
 
+//Return Asset
+Route::resource('return_asset',ReturnAssetController::class);
 
-
+//Maintenance Asset
+Route::resource('maintenance_asset',RequestMaintenanceController::class);
 
 // Route::get('/dashboard', function () {
 //     return view('layouts.template');

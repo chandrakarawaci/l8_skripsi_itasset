@@ -43,6 +43,11 @@
                     </div> --}}
                     <form class="form">
                       <div class="form-body">
+                      <div class="form-group">
+                          <label for="companyName">Return Asset ID</label>
+                          <input type="text" id="return_asset_id" class="form-control" placeholder="Username"
+                          name="return_asset_id" value="{{ $return_code }}" readonly>
+                        </div>
                          <div class="form-group">
                           <label for="companyName">Username</label>
                           <input type="text" id="companyName" class="form-control" placeholder="Username"
