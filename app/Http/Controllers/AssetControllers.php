@@ -54,7 +54,7 @@ class AssetControllers extends Controller
         $prefix = 'REQ-';
 
         // $request_code = AutoNumber::autonumber($table,$pk,$prefix);
-        $request_code = AutoNumber::getReqAssetAutoNo('REQ-');
+        $request_code = AutoNumber::getReqAssetAutoNo('REQM');
         return view('admin.request-asset',compact('request_code'));
     }
 

@@ -19,38 +19,60 @@ class AutoNumber
         return $ymd;
     }
 
-    public static function getReqAssetAutoNo(){
+    public static function getReqAssetAutoNo($prefix){
         $now = Carbon::now();
         $ymd = $now->year . $now->month . $now->day;
         $get_awal = RequestAssetModel::all()->last();
         if($get_awal === null){
-            $kode = 'REQ-'.$ymd.'0000001';
+            $no = 0;
+            $kode = $prefix.'-'.$ymd.'0000001';
         }else{
-            $kode = Str::substr($get_awal->kode_request,10,7);
+            $no = Str::substr($get_awal->kode_request,10,7);
+            $kode = $prefix.'-'.$ymd.sprintf('%07s',(int)$no+1);
         }
         return $kode;
+    }
 
-        //return $kd;
-        // $now = Carbon::now();
-        // $tahun_bulan = $now->year . $now->month . $now->day;
-        // return $tahun_bulan;
+    public static function getMaintenanceAssetAutoNo($prefix){
+        $now = Carbon::now();
+        $ymd = $now->year . $now->month . $now->day;
+        $get_awal = MaintenanceAssetModel::all()->last();
+        if($get_awal === null){
+            $no = 0;
+            $kode = $prefix.'-'.$ymd.'0000001';
+        }else{
+            $no = Str::substr($get_awal->request_mtn_no,10,7);
+            $kode = $prefix.'-'.$ymd.sprintf('%07s',(int)$no+1);
+        }
+        return $kode;
+    }
 
-        // $q=DB::table($barang)->select(DB::raw('MAX(RIGHT('.$primary.',5)) as kd_max'));
-        // $prx=$prefix. $tahun_bulan;
-        // if($q->count()>0)
-        // {
-        //     foreach($q->get() as $k)
-        //     {
-        //         $tmp = ((int)$k->kd_max)+1;
-        //         $kd = $prx.sprintf("%06s", $tmp);
-        //     }
-        // }
-        // else
-        // {
-        //     $kd = $prx."000001";
-        // }
+    public static function getAuditAssetAutoNo($prefix){
+        $now = Carbon::now();
+        $ymd = $now->year . $now->month . $now->day;
+        $get_awal = AuditAssetModel::all()->last();
+        if($get_awal === null){
+            $no = 0;
+            $kode = $prefix.'-'.$ymd.'0000001';
+        }else{
+            $no = Str::substr($get_awal->audit_no,10,7);
+            $kode = $prefix.'-'.$ymd.sprintf('%07s',(int)$no+1);
+        }
+        return $kode;
+    }
 
-        // return $kd;
+    public static function getReturnAssetAutoNo($prefix){
+        $now = Carbon::now();
+        $ymd = $now->year . $now->month . $now->day;
+        $get_awal = ReturnAssetModel::all()->last();
+        if($get_awal === null){
+            $no = 0;
+            $kode = $prefix.'-'.$ymd.'0000001';
+        }else{
+            $no = Str::substr($get_awal->return_no,10,7);
+            $kode = $prefix.'-'.$ymd.sprintf('%07s',(int)$no+1);
+        }
+        return $kode;
     }
 
 
