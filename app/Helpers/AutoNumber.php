@@ -2,39 +2,55 @@
 
 namespace App\Helpers;
 use Carbon\Carbon;
+use App\Models\AssetModel;
+use App\Models\ReturnAssetModel;
+use App\Models\MaintenanceAssetModel;
+use App\Models\RequestAssetModel;
+use App\Models\AuditAssetModel;
+// use Illuminate\support\Facades\DB;
+use Illuminate\Support\Str;
 
 class AutoNumber
 {
-    public function getYearMonth(){
+    //public static $kd = '';
+    public static function getYearMonthDay(){
         $now = Carbon::now();
-        $tahun_bulan = $now->year . $now->month;
-        return $tahun_bulan;
+        $ymd = $now->year . $now->month . $now->day;
+        return $ymd;
     }
 
-    
-    public static function convertdate(){
-        date_default_timezone_set('Asia/Jakarta');
-        $date = date('dmy');
-        return $date;
-    }
-
-    public static function autonumber($barang,$primary,$prefix){
-        $q=DB::table($barang)->select(DB::raw('MAX(RIGHT('.$primary.',5)) as kd_max'));
-        $prx=$prefix.Dateindo::convertdate();
-        if($q->count()>0)
-        {
-            foreach($q->get() as $k)
-            {
-                $tmp = ((int)$k->kd_max)+1;
-                $kd = $prx.sprintf("%06s", $tmp);
-            }
+    public static function getReqAssetAutoNo(){
+        $now = Carbon::now();
+        $ymd = $now->year . $now->month . $now->day;
+        $get_awal = RequestAssetModel::all()->last();
+        if($get_awal === null){
+            $kode = 'REQ-'.$ymd.'0000001';
+        }else{
+            $kode = Str::substr($get_awal->kode_request,10,7);
         }
-        else
-        {
-            $kd = $prx."000001";
-        }
+        return $kode;
 
-        return $kd;
+        //return $kd;
+        // $now = Carbon::now();
+        // $tahun_bulan = $now->year . $now->month . $now->day;
+        // return $tahun_bulan;
+
+        // $q=DB::table($barang)->select(DB::raw('MAX(RIGHT('.$primary.',5)) as kd_max'));
+        // $prx=$prefix. $tahun_bulan;
+        // if($q->count()>0)
+        // {
+        //     foreach($q->get() as $k)
+        //     {
+        //         $tmp = ((int)$k->kd_max)+1;
+        //         $kd = $prx.sprintf("%06s", $tmp);
+        //     }
+        // }
+        // else
+        // {
+        //     $kd = $prx."000001";
+        // }
+
+        // return $kd;
     }
 
 

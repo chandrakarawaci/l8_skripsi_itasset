@@ -31,7 +31,7 @@
             <div class="col-md-6">
               <div class="card">
                 <div class="card-header">
-                  <h4 class="card-title" id="basic-layout-form">Asset Info</h4>
+                  <h4 class="card-title" id="basic-layout-form">Asset Info [{{ $request_code }}]</h4>
                   <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                   <div class="heading-elements">
                     <ul class="list-inline mb-0">
@@ -51,7 +51,6 @@
                     </div> --}}
                     <form class="form">
                       <div class="form-body">
-                        <h4 class="form-section"><i class="ft-user"></i> Personal Info</h4>
                         <div class="form-group">
                           <label for="companyName">Asset ID</label>
                           <input type="text" id="companyName" class="form-control" placeholder="Asset ID"
