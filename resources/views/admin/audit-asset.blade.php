@@ -9,17 +9,9 @@
     <div class="content-wrapper">
       <div class="content-header row">
         <div class="content-header-left col-md-6 col-12 mb-2">
-          <h3 class="content-header-title">Basic Forms</h3>
+          <h3 class="content-header-title">Audit Asset</h3>
           <div class="row breadcrumbs-top">
-            <div class="breadcrumb-wrapper col-12">
-              <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">Home</a>
-                </li>
-                <li class="breadcrumb-item"><a href="#">Form Layouts</a>
-                </li>
-                <li class="breadcrumb-item active"><a href="#">Basic Forms</a>
-                </li>
-              </ol>
+            <div class="breadcrumb-wrapper col-12">              
             </div>
           </div>
         </div>
@@ -31,7 +23,7 @@
             <div class="col-md-6">
               <div class="card">
                 <div class="card-header">
-                  <h4 class="card-title" id="basic-layout-form">Project Info</h4>
+                  <h4 class="card-title" id="basic-layout-form">Please fill below :</h4>
                   <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                   <div class="heading-elements">
                     <ul class="list-inline mb-0">
@@ -51,92 +43,91 @@
                     </div> --}}
                     <form class="form">
                       <div class="form-body">
-                        <h4 class="form-section"><i class="ft-user"></i> Personal Info</h4>
                         <div class="row">
                           <div class="col-md-6">
                             <div class="form-group">
-                              <label for="projectinput1">First Name</label>
-                              <input type="text" id="projectinput1" class="form-control" placeholder="First Name"
-                              name="fname">
+                              <label for="projectinput1">Auditor Name</label>
+                              <input type="text" id="auditor_name" class="form-control" placeholder="Auditor Name"
+                              name="auditor_name">
                             </div>
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
-                              <label for="projectinput2">Last Name</label>
-                              <input type="text" id="projectinput2" class="form-control" placeholder="Last Name"
-                              name="lname">
+                              <label for="companyName">Date</label>
+                              <input type="date" id="issueinput3" class="form-control" name="dateopened" data-toggle="tooltip"
+                              data-trigger="hover" data-placement="top" data-title="Date Opened">
                             </div>
                           </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-md-6">
-                            <div class="form-group">
-                              <label for="projectinput3">E-mail</label>
-                              <input type="text" id="projectinput3" class="form-control" placeholder="E-mail" name="email">
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="form-group">
-                              <label for="projectinput4">Contact Number</label>
-                              <input type="text" id="projectinput4" class="form-control" placeholder="Phone" name="phone">
-                            </div>
-                          </div>
-                        </div>
-                        <h4 class="form-section"><i class="la la-paperclip"></i> Requirements</h4>
-                        <div class="form-group">
-                          <label for="companyName">Company</label>
-                          <input type="text" id="companyName" class="form-control" placeholder="Company Name"
-                          name="company">
-                        </div>
-                        <div class="form-group">
-                          <label for="companyName">Date</label>
-                          <input type="date" id="issueinput3" class="form-control" name="dateopened" data-toggle="tooltip"
-                          data-trigger="hover" data-placement="top" data-title="Date Opened">
                         </div>
                         <div class="row">
                           <div class="col-md-6">
                             <div class="form-group">
-                              <label for="projectinput5">Interested in</label>
+                              <label for="projectinput3">Audit Number</label>
+                              <input type="text" id="audit_number" class="form-control" placeholder="Audit Number" name="audit_number" value="{{ $audit_code }}" readonly>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                          <div class="form-group">
+                              <label for="projectinput5">Location</label>
                               <select id="projectinput5" name="interested" class="form-control">
-                                <option value="none" selected="" disabled="">Interested in</option>
-                                <option value="design">design</option>
-                                <option value="development">development</option>
-                                <option value="illustration">illustration</option>
-                                <option value="branding">branding</option>
-                                <option value="video">video</option>
+                                <option value="none" selected="" disabled=""></option>
+                                <option value="CWJ 31">CWJ 31</option>
+                                <option value="CWJ 32">CWJ 32</option>
+                                <option value="CWJ 33">CWJ 33</option>
+                                <option value="CWJ 34">CWJ 34</option>
+                                <option value="Bandung Dago">Bandung Dago</option>
+                                <option value="Juanda">Juanda</option>
+                                <option value="Medan Imam Bonjol">Medan Imam Bonjol</option>
+                                <option value="Surabaya Galaxy">Surabaya Galaxy</option>
                               </select>
+                            </div>    
+                          </div>
+                        </div>
+                        <h4 class="form-section"></i></h4>                          
+                          <div class="form-group">
+                              <label for="projectinput1">Auditor</label>
+                              <input type="text" id="auditor" class="form-control" placeholder="Vendor 1 (username)"
+                              name="auditor" readonly>
+                          </div>
+                            <div class="form-group">
+                              <label for="projectinput1">Serial Number</label>
+                              <input type="text" id="serial_number" class="form-control" placeholder="Serial Number"
+                              name="serial_number">
+                            </div>                                                 
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label for="projectinput1">Asset Type</label>
+                              <input type="text" id="asset_type" class="form-control" placeholder="Asset Type"
+                              name="asset_type" readonly>
                             </div>
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
-                              <label for="projectinput6">Budget</label>
-                              <select id="projectinput6" name="budget" class="form-control">
-                                <option value="0" selected="" disabled="">Budget</option>
-                                <option value="less than 5000$">less than 5000$</option>
-                                <option value="5000$ - 10000$">5000$ - 10000$</option>
-                                <option value="10000$ - 20000$">10000$ - 20000$</option>
-                                <option value="more than 20000$">more than 20000$</option>
-                              </select>
+                              <label for="companyName">Model</label>
+                              <input type="text" id="model" class="form-control" placeholder="Model" name="model" readonly>
                             </div>
                           </div>
                         </div>
                         <div class="form-group">
-                          <label>Select File</label>
-                          <label id="projectinput7" class="file center-block">
-                            <input type="file" id="file">
-                            <span class="file-custom"></span>
-                          </label>
-                        </div>
+                              <label for="projectinput5">Condition</label>
+                              <select id="projectinput5" name="interested" class="form-control">
+                                <option value="none" selected="" disabled=""></option>
+                                <option value="CWJ 31">Active-Good</option>
+                                <option value="CWJ 32">Inactive-Broken</option>
+                                <option value="CWJ 33">Inactive-Keep</option>
+                              </select>
+                            </div>
                         <div class="form-group">
-                          <label for="projectinput8">About Project</label>
-                          <textarea id="projectinput8" rows="5" class="form-control" name="comment" placeholder="About Project"></textarea>
+                          <label for="projectinput8">Remarks</label>
+                          <textarea id="projectinput8" rows="5" class="form-control" name="comment" placeholder="Remarks Audit"></textarea>
                         </div>
                       </div>
                       <div class="form-actions right">
-                        <button type="button" class="btn btn-warning btn-min-width">
+                        <button type="button" class="btn btn-danger btn-min-width">
                          Cancel
                         </button>
-                        <button type="submit" class="btn btn-primary btn-min-width">
+                        <button type="submit" class="btn btn-success btn-min-width">
                           Save
                         </button>
                       </div>

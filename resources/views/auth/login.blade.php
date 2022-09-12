@@ -14,7 +14,7 @@
                     <img src="{{ asset('modernadmin/app-assets/images/logo/logo-dark.png') }}" alt="branding logo">
                   </div>
                   <p class="card-subtitle line-on-side text-muted text-center font-small-3 pt-2">
-                    <span>Please enter your Email and Password</span>
+                    <span>Please enter Email and Password</span>
                   </p>
                 </div>
                 <div class="card-content">

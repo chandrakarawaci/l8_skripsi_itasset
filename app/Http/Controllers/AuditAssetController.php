@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\AuditAssetModel;
 use Illuminate\Http\Request;
+use App\Helpers\AutoNumber;
+
 
 class AuditAssetController extends Controller
 {
@@ -24,7 +26,8 @@ class AuditAssetController extends Controller
      */
     public function create()
     {
-        //
+        $audit_code = AutoNumber::getAuditAssetAutoNo('AUDIT');
+        return view('admin.audit-asset',compact('audit_code'));
     }
 
     /**
@@ -41,10 +44,10 @@ class AuditAssetController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\AuditAssetModel  $auditAssetModel
+     * @param  \App\Models\AuditAssetModel  $audit_asset
      * @return \Illuminate\Http\Response
      */
-    public function show(AuditAssetModel $auditAssetModel)
+    public function show(AuditAssetModel $audit_asset)
     {
         //
     }
@@ -52,10 +55,10 @@ class AuditAssetController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\AuditAssetModel  $auditAssetModel
+     * @param  \App\Models\AuditAssetModel  $audit_asset
      * @return \Illuminate\Http\Response
      */
-    public function edit(AuditAssetModel $auditAssetModel)
+    public function edit(AuditAssetModel $audit_asset)
     {
         //
     }
@@ -64,10 +67,10 @@ class AuditAssetController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\AuditAssetModel  $auditAssetModel
+     * @param  \App\Models\AuditAssetModel  $audit_asset
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, AuditAssetModel $auditAssetModel)
+    public function update(Request $request, AuditAssetModel $audit_asset)
     {
         //
     }
@@ -75,10 +78,10 @@ class AuditAssetController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\AuditAssetModel  $auditAssetModel
+     * @param  \App\Models\AuditAssetModel  $audit_asset
      * @return \Illuminate\Http\Response
      */
-    public function destroy(AuditAssetModel $auditAssetModel)
+    public function destroy(AuditAssetModel $audit_asset)
     {
         //
     }

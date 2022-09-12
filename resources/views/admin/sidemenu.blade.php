@@ -51,7 +51,7 @@
       </li>
       <li class="nav-item"><a href="#"><i class="la la-search"></i><span class="menu-title" data-i18n="nav.dash.main">Audit</span></a>
         <ul class="menu-content">
-          <li class="menu-item"><a class="menu-item" href="audit-asset" data-i18n="nav.dash.ecommerce">Audit Asset</a>
+          <li class="menu-item"><a class="menu-item" href="" data-i18n="nav.dash.ecommerce">Audit Asset</a>
           </li>
           <li><a class="menu-item" href="report-audit" data-i18n="nav.dash.crypto">Report Audit</a>
           </li>

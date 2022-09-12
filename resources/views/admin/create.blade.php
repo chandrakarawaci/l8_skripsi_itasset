@@ -64,8 +64,8 @@
                             </select>
                           </div>
                       <div class="form-actions right">
-                        <a href="{{ URL::previous() }}" class="btn btn-warning btn-min-width">Back</a>                        {{-- </button> --}}
-                        <button type="submit" class="btn btn-primary btn-min-width">
+                        <a href="{{ URL::previous() }}" class="btn btn-danger btn-min-width">Back</a>                        {{-- </button> --}}
+                        <button type="submit" class="btn btn-success btn-min-width">
                           Save
                         </button>
                       </div>
