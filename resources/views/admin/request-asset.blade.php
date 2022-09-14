@@ -50,8 +50,8 @@
                         </div>
                          <div class="form-group">
                           <label for="companyName">Username</label>
-                          <input type="text" id="companyName" class="form-control" placeholder="Asset ID"
-                          name="assetid">
+                          <input type="text" id="username" class="form-control" placeholder="Username"
+                          name="username">
                         </div>
                         <div class="form-group">
                           <label for="companyName">Date</label>

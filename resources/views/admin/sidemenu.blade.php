@@ -35,15 +35,15 @@
       </li>
      <li class=" nav-item"><a href="#"><i class="la la-retweet"></i><span class="menu-title" data-i18n="nav.dash.main">Return</span></a>
         <ul class="menu-content">
-          <li class="menu-item"><a class="menu-item" href="{{ route ('return_asset.create') }}" data-i18n="nav.dash.ecommerce">Return Asset</a>
+          <li class="menu-item"><a class="menu-item" href="{{ route('return_asset.create') }}" data-i18n="nav.dash.ecommerce">Return Asset</a>
           </li>
-          <li><a class="menu-item" href="report-return" data-i18n="nav.dash.crypto">Report Return</a>
+          <li><a class="menu-item" href="{{ route('admin.report-return') }}" data-i18n="nav.dash.crypto">Report Return</a>
           </li>
           </ul>
       </li>
       <li class=" nav-item"><a href="#"><i class="la la-wrench"></i><span class="menu-title" data-i18n="nav.dash.main">Maintenance</span></a>
         <ul class="menu-content">
-          <li class="menu-item"><a class="menu-item" href="{{ route ('maintenance_asset.create') }}" data-i18n="nav.dash.ecommerce">Request Maintenance</a>
+          <li class="menu-item"><a class="menu-item" href="{{ route('maintenance_asset.create') }}" data-i18n="nav.dash.ecommerce">Request Maintenance</a>
           </li>
           <li><a class="menu-item" href="report-maintenance" data-i18n="nav.dash.crypto">Report Maintenance</a>
           </li>
@@ -51,9 +51,9 @@
       </li>
       <li class="nav-item"><a href="#"><i class="la la-search"></i><span class="menu-title" data-i18n="nav.dash.main">Audit</span></a>
         <ul class="menu-content">
-          <li class="menu-item"><a class="menu-item" href="" data-i18n="nav.dash.ecommerce">Audit Asset</a>
+          <li class="menu-item"><a class="menu-item" href="{{ route('audit_asset.create') }}" data-i18n="nav.dash.ecommerce">Audit Asset</a>
           </li>
-          <li><a class="menu-item" href="report-audit" data-i18n="nav.dash.crypto">Report Audit</a>
+          <li><a class="menu-item" href="{{ route('admin.report-audit') }}" data-i18n="nav.dash.crypto">Report Audit</a>
           </li>
         </ul>
         <li class="menu-item"><a href="{{ route('logout') }}"><i class="la la-power-off"></i><span class="menu-title" data-i18n="nav.scrumboard.main">Logout</span></a>

@@ -15,7 +15,7 @@ class ReturnAssetController extends Controller
      */
     public function index()
     {
-        //
+       //
     }
 
     /**
@@ -29,6 +29,11 @@ class ReturnAssetController extends Controller
         return view('admin.return-asset',compact('return_code'));
     }
 
+    public function showReturn()
+    {
+        $return_asset = ReturnAssetModel::all();
+        return view('admin.report-return', compact('return_asset'));
+    }
     /**
      * Store a newly created resource in storage.
      *

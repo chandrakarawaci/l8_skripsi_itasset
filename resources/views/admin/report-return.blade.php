@@ -46,56 +46,18 @@
                           </tr>
                         </thead>
                         <tbody>
+                          @foreach ($return_asset as $data)
                           <tr>
-                            <td>RTNAST001</td>
-                            <td>chandra2</td>
-                            <td>01 August 2022</td>
-                            <td>Laptop</td>
-                            <td>PC1234</td>
-                            <td>10PC1234</td>
-                            <td>Medan Imam Bonjol</td>
-                            <td>Keyboard Broken</td>
+                            <td>{{$data->return_no}}</td>
+                            <td>{{$data->id_user}}</td>
+                            <td>{{$data->tgl_pengembalian}}</td>
+                            <td>{{$data->id_jenis_asset}}</td>
+                            <td>{{$data->id_asset}}</td>
+                            <td>{{$data->id_asset}}</td>
+                            <td>{{$data->id_asset_location}}</td>
+                            <td>{{$data->keterangan}}</td>
                           </tr>
-                          <tr>
-                            <td>RTNAST002</td>
-                            <td>ayuniws</td>
-                            <td>04 August 2022</td>
-                            <td>PC Desktop</td>
-                            <td>PD1234</td>
-                            <td>10PD1234</td>
-                            <td>CWJ 33</td>
-                            <td>Not used</td>
-                          </tr>
-                          <tr>
-                            <td>RTNAST003</td>
-                            <td>fhurqon</td>
-                            <td>04 August 2022</td>
-                            <td>Laptop</td>
-                            <td>PC5678</td>
-                            <td>10PC5678</td>
-                            <td>Mega Kuningan</td>
-                            <td>Not used</td>
-                          </tr>
-                          <tr>
-                            <td>RTNAST004</td>
-                            <td>rahma</td>
-                            <td>05 August 2022</td>
-                            <td>Laptop</td>
-                            <td>PC2233</td>
-                            <td>10PC2233</td>
-                            <td>CWJ 31</td>
-                            <td>LCD Broken</td>
-                          </tr>
-                          <tr>
-                            <td>RTNAST005</td>
-                            <td>yodyy</td>
-                            <td>07 August 2022</td>
-                            <td>Laptop</td>
-                            <td>PC7788</td>
-                            <td>10PC7788</td>
-                            <td>CWJ 37</td>
-                            <td>Broken</td>
-                          </tr>                          
+                          @endforeach
                         </tbody>
                       </table>
                   </div>

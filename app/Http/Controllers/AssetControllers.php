@@ -49,12 +49,6 @@ class AssetControllers extends Controller
 
     }
 
-    public function returnAsset()
-    {
-        return view ('admin.return-asset');
-
-    }
-
     public function reportReturn()
     {
         return view ('admin.report-return');

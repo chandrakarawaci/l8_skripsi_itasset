@@ -6,7 +6,6 @@ use App\Models\AuditAssetModel;
 use Illuminate\Http\Request;
 use App\Helpers\AutoNumber;
 
-
 class AuditAssetController extends Controller
 {
     /**
@@ -28,6 +27,11 @@ class AuditAssetController extends Controller
     {
         $audit_code = AutoNumber::getAuditAssetAutoNo('AUDIT');
         return view('admin.audit-asset',compact('audit_code'));
+    }
+
+    public function report(AuditAssetModel $audit_asset)
+    {
+        return view('admin.report-audit',compact('audit_asset'));
     }
 
     /**
