@@ -12,7 +12,6 @@ class RequestMaintenanceModel extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'id',
         'id_asset',
         'id_asset_location',
         'id_jenis_asset',

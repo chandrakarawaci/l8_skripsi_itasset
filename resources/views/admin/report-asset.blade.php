@@ -51,11 +51,23 @@
                           </tr>
                         </thead>
                         <tbody>
-                          
+                          @foreach ($vasset as $data)
                           <tr>
-
+                          <td>{{$data->id_transaction}}</td>
+                          <td>{{$data->host_name}}</td>
+                          <td>{{$data->serial_number}}</td>
+                          <td>{{$data->kode_asset}}</td>
+                          <td>{{$data->user_name}}</td>
+                          <td>{{$data->dept}}</td>
+                          <td>{{$data->division}}</td>
+                          <td>{{$data->no_po}}</td>
+                          <td>{{$data->po_date}}</td>
+                          <td>{{$data->model}}</td>
+                          <td>{{$data->id_asset_location}}</td>
+                          <td>{{$data->id_asset_status}}</td>
+                          <td>{{$data->id_jenis_asset}}</td>
                           </tr>
-                          
+                          @endforeach
                         </tbody>
                       </table>
                   </div>

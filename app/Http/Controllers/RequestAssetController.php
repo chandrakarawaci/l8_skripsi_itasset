@@ -29,6 +29,12 @@ class RequestAssetController extends Controller
         return view('admin.request-asset',compact('request_code'));
     }
 
+    public function showRequest()
+    {
+        $req_asset = RequestAssetModel::all();
+        return view('admin.report-request', compact('req_asset'));
+    }
+
     /**
      * Store a newly created resource in storage.
      *

@@ -47,61 +47,19 @@
                           </tr>
                         </thead>
                         <tbody>
+                          @foreach ($req_asset as $data)
                           <tr>
-                            <td>REQAST001</td>
-                            <td>chandra2</td>
-                            <td>01 August 2022</td>
-                            <td>Laptop</td>
-                            <td>PC1234</td>
-                            <td>10PC1234</td>
-                            <td>Medan Imam Bonjol</td>
-                            <td>Approve</td>
-                            <td>Laptop for new joiner</td>
+                            <td>{{$data->kode_request}}</td>
+                            <td>{{$data->id_user}}</td>
+                            <td>{{$data->tgl_request}}</td>
+                            <td>{{$data->id_jenis_asset}}</td>
+                            <td>{{$data->id_asset}}</td>
+                            <td>{{$data->id_asset}}</td>
+                            <td>{{$data->id_asset_location}}</td>
+                            <td>{{$data->request_status}}</td>
+                            <td>{{$data->keterangan}}</td>
                           </tr>
-                          <tr>
-                            <td>REQAST002</td>
-                            <td>ayuniws</td>
-                            <td>04 August 2022</td>
-                            <td>PC Desktop</td>
-                            <td>PD1234</td>
-                            <td>10PD1234</td>
-                            <td>CWJ 33</td>
-                            <td>Approve</td>
-                            <td>PC Desktop for Audit OJK</td>
-                          </tr>
-                          <tr>
-                            <td>REQAST003</td>
-                            <td>fhurqon</td>
-                            <td>04 August 2022</td>
-                            <td>Laptop</td>
-                            <td>PC5678</td>
-                            <td>10PC5678</td>
-                            <td>Mega Kuningan</td>
-                            <td>Approve</td>
-                            <td>Laptop backup for waiting repair</td>
-                          </tr>
-                          <tr>
-                            <td>REQAST004</td>
-                            <td>rahma</td>
-                            <td>05 August 2022</td>
-                            <td>Laptop</td>
-                            <td>PC2233</td>
-                            <td>10PC2233</td>
-                            <td>CWJ 31</td>
-                            <td>Waiting</td>
-                            <td>Laptop for new joiner</td>
-                          </tr>
-                          <tr>
-                            <td>REQAST005</td>
-                            <td>yodyy</td>
-                            <td>07 August 2022</td>
-                            <td>Laptop</td>
-                            <td>PC7788</td>
-                            <td>10PC7788</td>
-                            <td>CWJ 37</td>
-                            <td>Waiting</td>
-                            <td>Laptop for new joiner</td>
-                          </tr>                          
+                          @endforeach
                         </tbody>
                       </table>
                   </div>

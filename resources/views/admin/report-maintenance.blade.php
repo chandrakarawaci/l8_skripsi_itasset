@@ -46,56 +46,18 @@
                           </tr>
                         </thead>
                         <tbody>
+                          @foreach ($maintenance_asset as $data)
                           <tr>
-                            <td>MTNAST001</td>
-                            <td>chandra2</td>
-                            <td>01 August 2022</td>
-                            <td>Laptop</td>
-                            <td>PC1234</td>
-                            <td>10PC1234</td>
-                            <td>Medan Imam Bonjol</td>
-                            <td>Charger not connect</td>
+                            <td>{{$data->request_mtn_no}}</td>
+                            <td>{{$data->id_user}}</td>
+                            <td>{{$data->tgl_request_mtn}}</td>
+                            <td>{{$data->id_jenis_asset}}</td>
+                            <td>{{$data->id_asset}}</td>
+                            <td>{{$data->id_asset}}</td>
+                            <td>{{$data->id_asset_location}}</td>
+                            <td>{{$data->keterangan}}</td>
                           </tr>
-                          <tr>
-                            <td>MTNAST002</td>
-                            <td>ayuniws</td>
-                            <td>04 August 2022</td>
-                            <td>PC Desktop</td>
-                            <td>PD1234</td>
-                            <td>10PD1234</td>
-                            <td>CWJ 33</td>
-                            <td>Blue Screen</td>
-                          </tr>
-                          <tr>
-                            <td>MTNAST003</td>
-                            <td>fhurqon</td>
-                            <td>04 August 2022</td>
-                            <td>Laptop</td>
-                            <td>PC5678</td>
-                            <td>10PC5678</td>
-                            <td>Mega Kuningan</td>
-                            <td>Mati total</td>
-                          </tr>
-                          <tr>
-                            <td>MTNAST004</td>
-                            <td>rahma</td>
-                            <td>05 August 2022</td>
-                            <td>Laptop</td>
-                            <td>PC2233</td>
-                            <td>10PC2233</td>
-                            <td>CWJ 31</td>
-                            <td>LCD Broken</td>
-                          </tr>
-                          <tr>
-                            <td>MTNAST005</td>
-                            <td>yodyy</td>
-                            <td>07 August 2022</td>
-                            <td>Laptop</td>
-                            <td>PC7788</td>
-                            <td>10PC7788</td>
-                            <td>CWJ 37</td>
-                            <td>Suara Speaker tidak ada</td>
-                          </tr>                          
+                          @endforeach
                         </tbody>
                       </table>
                   </div>

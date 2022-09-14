@@ -21,7 +21,7 @@
           </li>
           <li><a class="menu-item" href="{{ route('admin.import-asset-form') }}" data-i18n="nav.dash.crypto">Import Asset</a>
           </li>
-          <li><a class="menu-item" href="{{ route('admin.asset-report') }}" data-i18n="nav.dash.sales">Report Asset</a>
+          <li><a class="menu-item" href="{{ route('admin.report-asset') }}" data-i18n="nav.dash.sales">Report Asset</a>
           </li>
         </ul>
       </li>
@@ -29,7 +29,7 @@
         <ul class="menu-content">
           <li class="menu-item"><a class="menu-item" href="{{ route('req_asset.create') }}" data-i18n="nav.dash.ecommerce">Request Asset</a>
           </li>
-          <li><a class="menu-item" href="report-request" data-i18n="nav.dash.crypto">Report Request</a>
+          <li><a class="menu-item" href="{{ route('admin.report-request') }}" data-i18n="nav.dash.crypto">Report Request</a>
           </li>
           </ul>
       </li>
@@ -45,7 +45,7 @@
         <ul class="menu-content">
           <li class="menu-item"><a class="menu-item" href="{{ route('maintenance_asset.create') }}" data-i18n="nav.dash.ecommerce">Request Maintenance</a>
           </li>
-          <li><a class="menu-item" href="report-maintenance" data-i18n="nav.dash.crypto">Report Maintenance</a>
+          <li><a class="menu-item" href="{{ route('admin.report-maintenance') }}" data-i18n="nav.dash.crypto">Report Maintenance</a>
           </li>
           </ul>
       </li>

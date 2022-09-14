@@ -29,6 +29,12 @@ class RequestMaintenanceController extends Controller
         return view('admin.request-maintenance',compact('maintenance_code'));
     }
 
+    public function showMaintenance()
+    {
+        $maintenance_asset = RequestMaintenanceModel::all();
+        return view('admin.report-maintenance', compact('maintenance_asset'));
+    }
+
     /**
      * Store a newly created resource in storage.
      *

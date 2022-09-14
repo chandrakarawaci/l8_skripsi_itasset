@@ -55,13 +55,6 @@ Route::get('/admin/asset-report', [App\Http\Controllers\AssetControllers::class,
 Route::get('/admin/import-asset-form', [App\Http\Controllers\AssetControllers::class, 'showImportAsetForm'])->name('admin.import-asset-form');
 Route::post('/admin/import-asset', [App\Http\Controllers\AssetControllers::class, 'importAset'])->name('admin.import');
 
-// Route::get('/admin/request-asset', [App\Http\Controllers\RequestAssetController::class, 'create'])->name('admin.request-asset');
-Route::get('/admin/report-request', [App\Http\Controllers\AssetControllers::class, 'reportRequest'])->name('admin.report-request');
-
-
-// Route::get('/admin/request-maintenance', [App\Http\Controllers\AssetControllers::class, 'requestMaintenance'])->name('admin.request-maintenance');
-Route::get('/admin/report-maintenance', [App\Http\Controllers\AssetControllers::class, 'reportMaintenance'])->name('admin.report-maintenance');
-
 // Pengguna
 Route::post('/pengguna/store', [App\Http\Controllers\PenggunaController::class, 'store'])->name('pengguna.store');
 Route::get('/pengguna/{pengguna}/edit', [App\Http\Controllers\PenggunaController::class, 'edit'])->name('pengguna.edit');
@@ -76,6 +69,7 @@ Route::get('/asset/{asset}/edit', [App\Http\Controllers\AssetControllers::class,
 Route::match(['put', 'patch'],'/asset/{id}', [App\Http\Controllers\AssetControllers::class, 'update'])->name('asset.update');
 Route::post('/asset/{id}', [App\Http\Controllers\AssetControllers::class, 'destroy'])->name('asset.destroy');
 Route::get('/asset/{asset}', [App\Http\Controllers\AssetControllers::class, 'show'])->name('asset.show');
+Route::get('/admin/report-asset', [App\Http\Controllers\AssetControllers::class, 'assetReport'])->name('admin.report-asset');
 
 //Audit Asset
 Route::resource('audit_asset',AuditAssetController::class);
@@ -83,6 +77,7 @@ Route::get('/admin/report-audit', [App\Http\Controllers\AuditAssetController::cl
 
 //Request Asset
 Route::resource('req_asset',RequestAssetController::class);
+Route::get('/admin/report-request', [App\Http\Controllers\RequestAssetController::class, 'showRequest'])->name('admin.report-request');
 
 //Return Asset
 Route::resource('return_asset',ReturnAssetController::class);
@@ -90,3 +85,4 @@ Route::get('/admin/report-return', [App\Http\Controllers\ReturnAssetController::
 
 //Maintenance Asset
 Route::resource('maintenance_asset',RequestMaintenanceController::class);
+Route::get('/admin/report-maintenance', [App\Http\Controllers\RequestMaintenanceController::class, 'showMaintenance'])->name('admin.report-maintenance');

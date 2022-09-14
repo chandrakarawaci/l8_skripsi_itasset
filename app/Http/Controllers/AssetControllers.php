@@ -21,8 +21,7 @@ class AssetControllers extends Controller
 
      public function index()
     {
-        $asset = AssetModel::all();
-        return view ('admin.report-asset',['vasset' => $asset]);
+        //
     }
 
      public function assetReport()
@@ -37,42 +36,12 @@ class AssetControllers extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function requestAsset()
-    {
-        return view ('admin.request-asset');
-
-    }
-
-    public function reportRequest()
-    {
-        return view ('admin.report-request');
-
-    }
-
-    public function reportReturn()
-    {
-        return view ('admin.report-return');
-
-    }
-
     public function create()
     {
         return view ('admin.register-asset');
 
     }
-
-    public function requestMaintenance()
-    {
-        return view ('admin.request-maintenance');
-
-    }
-
-    public function reportMaintenance()
-    {
-        return view ('admin.report-maintenance');
-
-    }
-
+   
     public function showImportAsetForm()
     {
         return view ('admin.import-asset');
