@@ -49,26 +49,26 @@
                           name="return_asset_id" value="{{ $return_code }}" readonly>
                         </div>
                          <div class="form-group">
-                          <label for="companyName">Username</label>
-                          <input type="text" id="companyName" class="form-control" placeholder="Username"
-                          name="assetid">
+                          <label for="id_user">Username</label>
+                          <input type="text" id="id_user" class="form-control" placeholder="Username"
+                          name="id_user">
                         </div>
                         <div class="form-group">
-                          <label for="companyName">Date</label>
-                          <input type="date" id="issueinput3" class="form-control" name="dateopened" data-toggle="tooltip"
+                          <label for="tgl_pengembalian">Date</label>
+                          <input type="date" id="tgl_pengembalian" class="form-control" name="tgl_pengembalian" data-toggle="tooltip"
                           data-trigger="hover" data-placement="top" data-title="Date Opened">
                         </div>
                         <div class="form-group">
-                              <label for="projectinput5">Asset Type</label>
-                              <select id="projectinput5" name="interested" class="form-control">
+                              <label for="id_jenis_asset">Asset Type</label>
+                              <select id="id_jenis_asset" name="id_jenis_asset" class="form-control">
                                 <option value="none" selected="" disabled=""></option>
                                 <option value="Laptop">Laptop</option>
                                 <option value="PC Desktop">PC Desktop</option>
                               </select>
                             </div>
                             <div class="form-group">
-                              <label for="projectinput5">Location</label>
-                              <select id="projectinput5" name="interested" class="form-control">
+                              <label for="id_asset_location">Location</label>
+                              <select id="id_asset_location" name="id_asset_location" class="form-control">
                                 <option value="none" selected="" disabled=""></option>
                                 <option value="CWJ 31">CWJ 31</option>
                                 <option value="CWJ 32">CWJ 32</option>
@@ -81,13 +81,13 @@
                               </select>
                             </div> 
                         <div class="form-group">
-                          <label for="companyName">Hostname</label>
-                          <input type="text" id="companyName" class="form-control" placeholder="Hostname"
-                          name="assetid">
+                          <label for="id_asset">Hostname</label>
+                          <input type="text" id="id_asset" class="form-control" placeholder="Hostname"
+                          name="id_asset">
                         </div>                     
                         <div class="form-group">
-                          <label for="projectinput8">Remarks</label>
-                          <textarea id="projectinput8" rows="5" class="form-control" name="comment" placeholder="Remarks"></textarea>
+                          <label for="keterangan">Remarks</label>
+                          <textarea id="keterangan" rows="5" class="form-control" name="keterangan" placeholder="Remarks"></textarea>
                         </div>
                       </div>
                       <div class="form-actions right">

@@ -15,7 +15,7 @@ class RequestAssetController extends Controller
      */
     public function index()
     {
-        //
+        // 
     }
 
     /**
@@ -65,7 +65,7 @@ class RequestAssetController extends Controller
      */
     public function edit(RequestAssetModel $req_asset)
     {
-        //
+        return view('admin.edit-request-asset', compact('req_asset'));
     }
 
     /**

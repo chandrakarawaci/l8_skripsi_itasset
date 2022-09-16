@@ -21,13 +21,14 @@ class AssetModel extends Model
         'user_name',
         'dept',
         'division',
+        'requestor',
         'no_po',
         'po_date',
         'model',
+        'keterangan',
         'id_asset_location',
         'id_asset_status',
         'id_jenis_asset',
         'image',
-       
     ];
 }

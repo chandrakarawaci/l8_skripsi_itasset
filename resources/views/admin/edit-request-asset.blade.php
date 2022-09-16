@@ -46,29 +46,29 @@
                       <div class="form-group">
                           <label for="companyName">Request Asset ID</label>
                           <input type="text" id="req_asset_id" class="form-control" placeholder="Request Asset ID"
-                          name="req_asset_id" value="{{ $request_code }}" readonly>
+                          name="req_asset_id" value="" readonly>
                         </div>
                          <div class="form-group">
-                          <label for="companyName">Username</label>
-                          <input type="text" id="username" class="form-control" placeholder="Username"
-                          name="username">
+                          <label for="id_user">Username</label>
+                          <input type="text" id="id_user" class="form-control" placeholder="Username"
+                          name="id_user">
                         </div>
                         <div class="form-group">
-                          <label for="companyName">Date</label>
-                          <input type="date" id="issueinput3" class="form-control" name="dateopened" data-toggle="tooltip"
+                          <label for="tgl_request">Date</label>
+                          <input type="date" id="tgl_request" class="form-control" name="tgl_request" data-toggle="tooltip"
                           data-trigger="hover" data-placement="top" data-title="Date Opened">
                         </div>
                         <div class="form-group">
-                              <label for="projectinput5">Asset Type</label>
-                              <select id="projectinput5" name="interested" class="form-control">
+                              <label for="id_jenis_asset">Asset Type</label>
+                              <select id="id_jenis_asset" name="id_jenis_asset" class="form-control">
                                 <option value="none" selected="" disabled=""></option>
                                 <option value="Laptop">Laptop</option>
                                 <option value="PC Desktop">PC Desktop</option>
                               </select>
                             </div>
                             <div class="form-group">
-                              <label for="projectinput5">Location</label>
-                              <select id="projectinput5" name="interested" class="form-control">
+                              <label for="id_asset_location">Location</label>
+                              <select id="id_asset_location" name="id_asset_location" class="form-control">
                                 <option value="none" selected="" disabled=""></option>
                                 <option value="CWJ 31">CWJ 31</option>
                                 <option value="CWJ 32">CWJ 32</option>

@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ReturnAssetModel;
+use App\Models\DetailAuditModel;
 use Illuminate\Http\Request;
-use App\Helpers\AutoNumber;
 
-class ReturnAssetController extends Controller
+class DetailAuditModelController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +14,7 @@ class ReturnAssetController extends Controller
      */
     public function index()
     {
-       //
+        //
     }
 
     /**
@@ -25,15 +24,9 @@ class ReturnAssetController extends Controller
      */
     public function create()
     {
-        $return_code = AutoNumber::getReturnAssetAutoNo('RTRNAST');
-        return view('admin.return-asset',compact('return_code'));
+        //
     }
 
-    public function showReturn()
-    {
-        $return_asset = ReturnAssetModel::all();
-        return view('admin.report-return', compact('return_asset'));
-    }
     /**
      * Store a newly created resource in storage.
      *
@@ -48,10 +41,10 @@ class ReturnAssetController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\ReturnAssetModel  $return_asset
+     * @param  \App\Models\DetailAuditModel  $detailAuditModel
      * @return \Illuminate\Http\Response
      */
-    public function show(ReturnAssetModel $return_asset)
+    public function show(DetailAuditModel $detailAuditModel)
     {
         //
     }
@@ -59,22 +52,22 @@ class ReturnAssetController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\ReturnAssetModel  $return_asset
+     * @param  \App\Models\DetailAuditModel  $detailAuditModel
      * @return \Illuminate\Http\Response
      */
-    public function edit(ReturnAssetModel $return_asset)
+    public function edit(DetailAuditModel $detailAuditModel)
     {
-        return view('admin.edit-return-asset', compact('return_asset'));
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\ReturnAssetModel  $return_asset
+     * @param  \App\Models\DetailAuditModel  $detailAuditModel
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ReturnAssetModel $return_asset)
+    public function update(Request $request, DetailAuditModel $detailAuditModel)
     {
         //
     }
@@ -82,10 +75,10 @@ class ReturnAssetController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\ReturnAssetModel  $return_asset
+     * @param  \App\Models\DetailAuditModel  $detailAuditModel
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ReturnAssetModel $return_asset)
+    public function destroy(DetailAuditModel $detailAuditModel)
     {
         //
     }

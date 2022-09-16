@@ -42,34 +42,33 @@
                         left corner which is the default position.</p>
                     </div> --}}
                     <form class="form">
-                      <div class="form-body">
-                        
+                    <div class="form-body">
                         <div class="form-group">
                           <label for="companyName">Asset ID</label>
-                          <input type="text" id="companyName" class="form-control" placeholder="Asset ID"
-                          name="assetid">
+                          <input type="text" id="kode_asset" class="form-control" placeholder="Asset ID"
+                          name="kode_asset">
                         </div>
                         <div class="row">
                           <div class="col-md-6">
                             <div class="form-group">
                               <label for="projectinput1">Hostname</label>
-                              <input type="text" id="projectinput1" class="form-control" placeholder="Hostname"
-                              name="hn">
+                              <input type="text" id="host_name" class="form-control" placeholder="Hostname"
+                              name="host_name">
                             </div>
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
                               <label for="projectinput2">Serial Number</label>
-                              <input type="text" id="projectinput2" class="form-control" placeholder="Serial Number"
-                              name="sn">
+                              <input type="text" id="serial_number" class="form-control" placeholder="Serial Number"
+                              name="serial_number">
                             </div>
                           </div>
                         </div>
                         <div class="row">
                           <div class="col-md-6">
                             <div class="form-group">
-                              <label for="projectinput5">Asset Type</label>
-                              <select id="projectinput5" name="interested" class="form-control">
+                              <label for="id_jenis_asset">Asset Type</label>
+                              <select id="id_jenis_asset" name="id_jenis_asset" class="form-control">
                                 <option value="none" selected="" disabled=""></option>
                                 <option value="Laptop">Laptop</option>
                                 <option value="PC Desktop">PC Desktop</option>
@@ -79,7 +78,7 @@
                           <div class="col-md-6">
                             <div class="form-group">
                               <label for="projectinput4">Model</label>
-                              <input type="text" id="projectinput4" class="form-control" placeholder="Model" name="model">
+                              <input type="text" id="model" class="form-control" placeholder="Model" name="model">
                             </div>
                           </div>
                         </div>
@@ -87,13 +86,13 @@
                           <div class="col-md-6">
                             <div class="form-group">
                               <label for="projectinput3">PO Number</label>
-                              <input type="text" id="projectinput3" class="form-control" placeholder="PO Number" name="po">
+                              <input type="text" id="no_po" class="form-control" placeholder="PO Number" name="no_po">
                             </div>
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
                               <label for="companyName">PO Date</label>
-                              <input type="date" id="issueinput3" class="form-control" name="dateopened" data-toggle="tooltip"
+                              <input type="date" id="po_date" class="form-control" name="po_date" data-toggle="tooltip"
                               data-trigger="hover" data-placement="top" data-title="Date Opened">
                             </div>
                           </div>
@@ -102,21 +101,21 @@
                           <div class="col-md-6">
                             <div class="form-group">
                               <label for="projectinput3">Requestor Name</label>
-                              <input type="text" id="projectinput3" class="form-control" placeholder="Requestor Name" name="rname">
+                              <input type="text" id="requestor" class="form-control" placeholder="Requestor Name" name="requestor">
                             </div>
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
                               <label for="projectinput4">User Name</label>
-                              <input type="text" id="projectinput4" class="form-control" placeholder="User Name" name="uname">
+                              <input type="text" id="user_name" class="form-control" placeholder="User Name" name="user_name">
                             </div>
                           </div>
                         </div>
                         <div class="row">
                           <div class="col-md-6">
                             <div class="form-group">
-                              <label for="projectinput5">Department</label>
-                              <select id="projectinput5" name="interested" class="form-control">
+                              <label for="dept">Department</label>
+                              <select id="dept" name="dept" class="form-control">
                                 <option value="none" selected="" disabled=""></option>
                                 <option value="HR">Human Resource</option>
                                 <option value="Finance">Finance</option>
@@ -129,8 +128,8 @@
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
-                              <label for="projectinput5">Division</label>
-                              <select id="projectinput5" name="interested" class="form-control">
+                              <label for="division">Division</label>
+                              <select id="division" name="division" class="form-control">
                                   <option value="none" selected="" disabled=""></option>
                                   <option value="HRIS">HRIS</option>
                                   <option value="Tax">Tax</option>
@@ -145,8 +144,8 @@
                         <div class="row">
                           <div class="col-md-6">
                             <div class="form-group">
-                              <label for="projectinput5">Location</label>
-                              <select id="projectinput5" name="interested" class="form-control">
+                              <label for="id_asset_location">Location</label>
+                              <select id="id_asset_location" name="id_asset_location" class="form-control">
                                 <option value="none" selected="" disabled=""></option>
                                 <option value="CWJ 31">CWJ 31</option>
                                 <option value="CWJ 32">CWJ 32</option>
@@ -161,8 +160,8 @@
                           </div>
                           <div class="col-md-6">
                           <div class="form-group">
-                              <label for="projectinput5">Asset Status</label>
-                              <select id="projectinput5" name="interested" class="form-control">
+                              <label for="id_asset_status">Asset Status</label>
+                              <select id="id_asset_status" name="id_asset_status" class="form-control">
                                 <option value="none" selected="" disabled=""></option>
                                 <option value="Active">Active</option>
                                 <option value="Available">Available</option>
@@ -182,8 +181,8 @@
                           </label>
                         </div>
                         <div class="form-group">
-                          <label for="projectinput8">Remarks</label>
-                          <textarea id="projectinput8" rows="5" class="form-control" name="comment" placeholder="Remarks"></textarea>
+                          <label for="keterangan">Remarks</label>
+                          <textarea id="keterangan" rows="5" class="form-control" name="keterangan" placeholder="Remarks"></textarea>
                         </div>
                       </div>
                       <div class="form-actions right">

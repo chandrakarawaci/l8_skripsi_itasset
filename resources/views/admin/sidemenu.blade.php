@@ -21,7 +21,7 @@
           </li>
           <li><a class="menu-item" href="{{ route('admin.import-asset-form') }}" data-i18n="nav.dash.crypto">Import Asset</a>
           </li>
-          <li><a class="menu-item" href="{{ route('admin.report-asset') }}" data-i18n="nav.dash.sales">Report Asset</a>
+          <li><a class="menu-item" href="{{ route('asset.index') }}" data-i18n="nav.dash.sales">Report Asset</a>
           </li>
         </ul>
       </li>

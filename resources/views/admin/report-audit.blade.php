@@ -29,9 +29,7 @@
                 </div>
                 <div class="card-content collapse show">
                   <div class="card-body card-dashboard">
-                    <div class="float-left">
-                      <a class="btn btn-success" href="{{ route('pengguna.create') }}">Add User</a>
-                  </div>
+
                       <table class="table table-striped table-bordered dataex-html5-export-print">
                         <thead>
                           <tr>
@@ -43,15 +41,15 @@
                             <th>Total Asset</th>
                             <th>Asset Found</th>
                             <th>Total Difference</th>
+                            <th>Action</th>
                           </tr>
                         </thead>
                         <tbody>
-
+                          @foreach ($audit_asset as $data)
                           <tr>
 
-                             
                           </tr>
-                        
+                          @endforeach
                         </tbody>
                       </table>
                   </div>

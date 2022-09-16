@@ -21,13 +21,8 @@ class AssetControllers extends Controller
 
      public function index()
     {
-        //
-    }
-
-     public function assetReport()
-    {
         $asset = AssetModel::all();
-        return view ('admin.report-asset',['vasset' => $asset]);
+        return view ('admin.display-master-asset',['vasset' => $asset]);
     }
 
     /**
@@ -136,9 +131,9 @@ class AssetControllers extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(AssetModel $asset)
     {
-        //
+        return view('admin.edit-register-asset', compact('asset'));
     }
 
     /**

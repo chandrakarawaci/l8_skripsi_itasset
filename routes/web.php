@@ -5,6 +5,7 @@ use App\Http\Controllers\AnggotaController;
 use App\Http\Controllers\SiswaControllers;
 use App\Http\Controllers\AssetControllers;
 use App\Http\Controllers\AuditAssetController;
+use App\Http\Controllers\ReportAssetController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\RequestAssetController;
@@ -51,7 +52,6 @@ Route::get('/admin/{pengguna}/show', [App\Http\Controllers\PenggunaController::c
 Route::get('/admin/dashboard', [App\Http\Controllers\PenggunaController::class, 'dashboard'])->name('admin.dashboard');
 Route::get('/admin/list-pengguna', [App\Http\Controllers\PenggunaController::class, 'index'])->name('pengguna.index');
 Route::get('/admin/create-pengguna', [App\Http\Controllers\PenggunaController::class, 'create'])->name('pengguna.create');
-Route::get('/admin/asset-report', [App\Http\Controllers\AssetControllers::class, 'assetReport'])->name('admin.asset-report');
 Route::get('/admin/import-asset-form', [App\Http\Controllers\AssetControllers::class, 'showImportAsetForm'])->name('admin.import-asset-form');
 Route::post('/admin/import-asset', [App\Http\Controllers\AssetControllers::class, 'importAset'])->name('admin.import');
 
@@ -63,17 +63,21 @@ Route::post('/pengguna/{id}', [App\Http\Controllers\PenggunaController::class, '
 Route::get('/pengguna/{pengguna}', [App\Http\Controllers\PenggunaController::class, 'show'])->name('pengguna.show');
 
 // Asset
-Route::get('/asset/create', [App\Http\Controllers\AssetControllers::class, 'create'])->name('asset.create');
-Route::post('/asset/store', [App\Http\Controllers\AssetControllers::class, 'store'])->name('asset.store');
-Route::get('/asset/{asset}/edit', [App\Http\Controllers\AssetControllers::class, 'edit'])->name('asset.edit');
-Route::match(['put', 'patch'],'/asset/{id}', [App\Http\Controllers\AssetControllers::class, 'update'])->name('asset.update');
-Route::post('/asset/{id}', [App\Http\Controllers\AssetControllers::class, 'destroy'])->name('asset.destroy');
-Route::get('/asset/{asset}', [App\Http\Controllers\AssetControllers::class, 'show'])->name('asset.show');
-Route::get('/admin/report-asset', [App\Http\Controllers\AssetControllers::class, 'assetReport'])->name('admin.report-asset');
+Route::resource('asset',AssetControllers::class);
+// Route::get('/asset/create', [App\Http\Controllers\AssetControllers::class, 'create'])->name('asset.create');
+// Route::post('/asset/store', [App\Http\Controllers\AssetControllers::class, 'store'])->name('asset.store');
+// Route::get('/asset/{asset}/edit', [App\Http\Controllers\AssetControllers::class, 'edit'])->name('asset.edit');
+// Route::match(['put', 'patch'],'/asset/{id}', [App\Http\Controllers\AssetControllers::class, 'update'])->name('asset.update');
+// Route::post('/asset/{id}', [App\Http\Controllers\AssetControllers::class, 'destroy'])->name('asset.destroy');
+// Route::get('/asset/{asset}', [App\Http\Controllers\AssetControllers::class, 'show'])->name('asset.show');
+
 
 //Audit Asset
 Route::resource('audit_asset',AuditAssetController::class);
 Route::get('/admin/report-audit', [App\Http\Controllers\AuditAssetController::class, 'report'])->name('admin.report-audit');
+
+//Report Asset
+// Route::resource('report_asset',ReportAssetController::class);
 
 //Request Asset
 Route::resource('req_asset',RequestAssetController::class);

@@ -19,7 +19,7 @@
             <div class="col-12">
               <div class="card">
                 <div class="card-header">
-                  <h4 class="card-title">Report Asset</h4>
+                  <h4 class="card-title">Report Master Asset</h4>
                   <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                   <div class="heading-elements">
                     <ul class="list-inline mb-0">
@@ -48,6 +48,7 @@
                             <th>Location</th>
                             <th>Status</th>
                             <th>Jenis Asset</th>
+                            <th>Action</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -66,6 +67,15 @@
                           <td>{{$data->id_asset_location}}</td>
                           <td>{{$data->id_asset_status}}</td>
                           <td>{{$data->id_jenis_asset}}</td>
+                          <td class="text-center">
+                                  <form action="{{ route('asset.destroy',$data->id) }}" method="POST">
+                                    <a class="btn btn-info btn-sm" href="{{ route('asset.show',$data->id) }}"><i class="la la-search"></i></a>
+                                      <a class="btn btn-primary btn-sm" href="{{ route('asset.edit',$data->id) }}"><i class="la la-edit"></i></a>
+                                      @csrf
+                                      @method('DELETE')
+                                      <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')"><i class="la la-trash"></i></button>
+                                  </form>
+                              </td>
                           </tr>
                           @endforeach
                         </tbody>

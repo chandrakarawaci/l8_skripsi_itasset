@@ -43,7 +43,8 @@
                             <th>Hostname</th>
                             <th>Location</th>
                             <th>Request Status</th>
-                            <th>Remarks</th>          
+                            <th>Remarks</th>
+                            <th>Action</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -58,6 +59,15 @@
                             <td>{{$data->id_asset_location}}</td>
                             <td>{{$data->request_status}}</td>
                             <td>{{$data->keterangan}}</td>
+                            <td class="text-center">
+                                  <form action="{{ route('req_asset.destroy',$data->id) }}" method="POST">
+                                    <a class="btn btn-info btn-sm" href="{{ route('req_asset.show',$data->id) }}"><i class="la la-search"></i></a>
+                                      <a class="btn btn-primary btn-sm" href="{{ route('req_asset.edit',$data->id) }}"><i class="la la-edit"></i></a>
+                                      @csrf
+                                      @method('DELETE')
+                                      <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')"><i class="la la-trash"></i></button>
+                                  </form>
+                              </td>
                           </tr>
                           @endforeach
                         </tbody>

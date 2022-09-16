@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\AuditAssetModel;
+use App\Models\DetailAuditModel;
 use Illuminate\Http\Request;
 use App\Helpers\AutoNumber;
 
@@ -64,7 +65,7 @@ class AuditAssetController extends Controller
      */
     public function edit(AuditAssetModel $audit_asset)
     {
-        //
+        return view('admin.edit-audit-asset', compact('audit_asset'));
     }
 
     /**

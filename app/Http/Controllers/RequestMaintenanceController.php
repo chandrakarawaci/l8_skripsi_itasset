@@ -65,7 +65,7 @@ class RequestMaintenanceController extends Controller
      */
     public function edit(RequestMaintenanceModel $maintenance_asset)
     {
-        //
+        return view('admin.edit-request-maintenance', compact('maintenance_asset'));
     }
 
     /**
