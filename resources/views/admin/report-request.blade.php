@@ -51,7 +51,7 @@
                           @foreach ($req_asset as $data)
                           <tr>
                             <td>{{$data->kode_request}}</td>
-                            <td>{{$data->id_user}}</td>
+                            <td>{{$data->user_name}}</td>
                             <td>{{$data->tgl_request}}</td>
                             <td>{{$data->id_jenis_asset}}</td>
                             <td>{{$data->id_asset}}</td>

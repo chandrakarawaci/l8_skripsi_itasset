@@ -13,8 +13,6 @@ class AssetModel extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'id',
-        'id_transaction',
         'host_name',
         'serial_number',
         'kode_asset',
@@ -31,4 +29,16 @@ class AssetModel extends Model
         'id_jenis_asset',
         'image',
     ];
+
+    public function location(){
+        return $this->belongsTo(LocationModel::class,'id_asset_location');
+    }
+
+    public function status(){
+        return $this->belongsTo(StatusAssetModel::class,'id_asset_status');
+    }
+
+    public function jenis(){
+        return $this->belongsTo(JenisAssetModel::class,'id_jenis_asset');
+    }
 }

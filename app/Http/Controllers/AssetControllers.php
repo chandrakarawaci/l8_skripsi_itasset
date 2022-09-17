@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\AssetModel;
+use App\Models\JenisAssetModel;
+use App\Models\LocationModel;
+use App\Models\StatusAssetModel;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Session;
@@ -33,10 +36,12 @@ class AssetControllers extends Controller
 
     public function create()
     {
-        return view ('admin.register-asset');
-
+        $location = LocationModel::all();
+        $status = StatusAssetModel::all();
+        $jenis = JenisAssetModel::all();
+        return view ('admin.register-asset', compact(['location','status','jenis']));
     }
-   
+
     public function showImportAsetForm()
     {
         return view ('admin.import-asset');
@@ -62,7 +67,7 @@ class AssetControllers extends Controller
 		Excel::import(new AssetModel, public_path('/asset_files/'.$nama_file));
 
 		// notifikasi dengan session
-		Session::flash('Import Assert','Data Aset Berhasil diimport !');
+		Session::flash('Import Asset','Data Aset Berhasil diimport !');
 
 		// alihkan halaman kembali
 		return redirect('/admin/index');
@@ -76,8 +81,9 @@ class AssetControllers extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request['host_name']);
         $request->validate([
-            'id_transaction' => 'required',
+            // 'id_transaction' => 'required',
             'host_name' => 'required',
             'serial_number' => 'required',
             'kode_asset' => 'required',
@@ -90,27 +96,29 @@ class AssetControllers extends Controller
             'id_asset_location' => 'required',
             'id_asset_status' => 'required',
             'id_jenis_asset' => 'required',
-            'image' => 'required',
+            // 'image' => 'required',
         ]);
 
+        $po_date = strtotime($request['po_date']);
         AssetModel::create([
-            'id_transaction' => $request['id_transaction'],
+            // 'id_transaction' => $request['id_transaction'],
             'host_name' => $request['host_name'],
             'serial_number' => $request['serial_number'],
             'kode_asset' => $request['kode_asset'],
             'user_name' => $request['user_name'],
             'dept' => $request['dept'],
             'division' => $request['division'],
+            'requestor' => $request['requestor'],
             'no_po' => $request['no_po'],
-            'po_date' => $request['po_date'],
+            'po_date' => date('Y-m-d', $po_date),
             'model' => $request['model'],
             'id_asset_location' => $request['id_asset_location'],
             'id_asset_status' => $request['id_asset_status'],
             'id_jenis_asset' => $request['id_jenis_asset'],
-            'image' => $request['image'],
+            // 'image' => $request['image'],
         ]);
         //Alert::warning('Tambah pengguna berhasil !');
-        return redirect()->route('admin.report-asset');
+        return redirect()->route('asset.index');
 
     }
 
@@ -179,7 +187,7 @@ class AssetControllers extends Controller
             'id_jenis_asset' => $request['id_jenis_asset'],
             'image' => $request['image'],
         ]);
-        return redirect()->route('admin.report-asset');
+        return redirect()->route('asset.index');
     }
 
     /**
@@ -191,6 +199,6 @@ class AssetControllers extends Controller
     public function destroy(AssetModel $id)
     {
   /*       $id->delete();
-        return redirect()->route('admin.report-asset')->with('Success','Data Berhasil di Hapus'); */
+        return redirect()->route('asset.index')->with('Success','Data Berhasil di Hapus'); */
     }
 }

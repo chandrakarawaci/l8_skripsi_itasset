@@ -35,7 +35,6 @@
                       <table class="table table-striped table-bordered dataex-html5-export-print">
                         <thead>
                           <tr>
-                            <th>ID Transaksi</th>
                             <th>Hostname</th>
                             <th>Serial Number</th>
                             <th>Kode Asset</th>
@@ -54,7 +53,6 @@
                         <tbody>
                           @foreach ($vasset as $data)
                           <tr>
-                          <td>{{$data->id_transaction}}</td>
                           <td>{{$data->host_name}}</td>
                           <td>{{$data->serial_number}}</td>
                           <td>{{$data->kode_asset}}</td>
@@ -64,9 +62,9 @@
                           <td>{{$data->no_po}}</td>
                           <td>{{$data->po_date}}</td>
                           <td>{{$data->model}}</td>
-                          <td>{{$data->id_asset_location}}</td>
-                          <td>{{$data->id_asset_status}}</td>
-                          <td>{{$data->id_jenis_asset}}</td>
+                          <td>{{$data->location->location_name}}</td>
+                          <td>{{$data->status->status}}</td>
+                          <td>{{$data->jenis->jenis}}</td>
                           <td class="text-center">
                                   <form action="{{ route('asset.destroy',$data->id) }}" method="POST">
                                     <a class="btn btn-info btn-sm" href="{{ route('asset.show',$data->id) }}"><i class="la la-search"></i></a>

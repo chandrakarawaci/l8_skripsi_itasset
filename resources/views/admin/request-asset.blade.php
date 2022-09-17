@@ -41,17 +41,18 @@
                         with any heading tags. This form has the buttons on the bottom
                         left corner which is the default position.</p>
                     </div> --}}
+                    <form method="POST" action="{{ route('req_asset.store') }}" class="form" novalidate>@csrf
                     <form class="form">
                       <div class="form-body">
                       <div class="form-group">
                           <label for="companyName">Request Asset ID</label>
-                          <input type="text" id="req_asset_id" class="form-control" placeholder="Request Asset ID"
-                          name="req_asset_id" value="{{ $request_code }}" readonly>
+                          <input type="text" id="kode_request" class="form-control" placeholder="Request Asset ID"
+                          name="kode_request" value="{{ $request_code }}" readonly>
                         </div>
                          <div class="form-group">
-                          <label for="id_user">Username</label>
-                          <input type="text" id="id_user" class="form-control" placeholder="Username"
-                          name="id_user">
+                          <label for="user_name">Username</label>
+                          <input type="text" id="user_name" class="form-control" placeholder="Username"
+                          name="user_name">
                         </div>
                         <div class="form-group">
                           <label for="tgl_request">Date</label>
@@ -61,28 +62,22 @@
                         <div class="form-group">
                               <label for="id_jenis_asset">Asset Type</label>
                               <select id="id_jenis_asset" name="id_jenis_asset" class="form-control">
-                                <option value="none" selected="" disabled=""></option>
-                                <option value="Laptop">Laptop</option>
-                                <option value="PC Desktop">PC Desktop</option>
+                                @foreach($jenis as $data)
+                                <option value="{{$data->id}}">{{$data->jenis}}</option>
+                                @endforeach
                               </select>
                             </div>
                             <div class="form-group">
                               <label for="id_asset_location">Location</label>
                               <select id="id_asset_location" name="id_asset_location" class="form-control">
-                                <option value="none" selected="" disabled=""></option>
-                                <option value="CWJ 31">CWJ 31</option>
-                                <option value="CWJ 32">CWJ 32</option>
-                                <option value="CWJ 33">CWJ 33</option>
-                                <option value="CWJ 34">CWJ 34</option>
-                                <option value="Bandung Dago">Bandung Dago</option>
-                                <option value="Juanda">Juanda</option>
-                                <option value="Medan Imam Bonjol">Medan Imam Bonjol</option>
-                                <option value="Surabaya Galaxy">Surabaya Galaxy</option>
+                                @foreach($location as $data)
+                                <option value="{{$data->id}}">{{$data->location_name}}</option>
+                                @endforeach
                               </select>
-                            </div>                          
+                            </div>
                         <div class="form-group">
-                          <label for="projectinput8">Remarks</label>
-                          <textarea id="projectinput8" rows="5" class="form-control" name="comment" placeholder="Remarks"></textarea>
+                          <label for="keterangan">Remarks</label>
+                          <textarea id="keterangan" rows="5" class="form-control" name="keterangan" placeholder="Remarks"></textarea>
                         </div>
                       </div>
                       <div class="form-actions right">

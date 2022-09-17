@@ -21,7 +21,7 @@
           </li>
           <li><a class="menu-item" href="{{ route('admin.import-asset-form') }}" data-i18n="nav.dash.crypto">Import Asset</a>
           </li>
-          <li><a class="menu-item" href="{{ route('asset.index') }}" data-i18n="nav.dash.sales">Report Asset</a>
+          <li><a class="menu-item" href="{{ route('asset.index') }}" data-i18n="nav.dash.sales">Data Asset</a>
           </li>
         </ul>
       </li>
@@ -29,7 +29,7 @@
         <ul class="menu-content">
           <li class="menu-item"><a class="menu-item" href="{{ route('req_asset.create') }}" data-i18n="nav.dash.ecommerce">Request Asset</a>
           </li>
-          <li><a class="menu-item" href="{{ route('admin.report-request') }}" data-i18n="nav.dash.crypto">Report Request</a>
+          <li><a class="menu-item" href="{{ route('admin.report-request') }}" data-i18n="nav.dash.crypto">Data Request</a>
           </li>
           </ul>
       </li>
@@ -37,7 +37,7 @@
         <ul class="menu-content">
           <li class="menu-item"><a class="menu-item" href="{{ route('return_asset.create') }}" data-i18n="nav.dash.ecommerce">Return Asset</a>
           </li>
-          <li><a class="menu-item" href="{{ route('admin.report-return') }}" data-i18n="nav.dash.crypto">Report Return</a>
+          <li><a class="menu-item" href="{{ route('admin.report-return') }}" data-i18n="nav.dash.crypto">Data Return</a>
           </li>
           </ul>
       </li>
@@ -45,7 +45,7 @@
         <ul class="menu-content">
           <li class="menu-item"><a class="menu-item" href="{{ route('maintenance_asset.create') }}" data-i18n="nav.dash.ecommerce">Request Maintenance</a>
           </li>
-          <li><a class="menu-item" href="{{ route('admin.report-maintenance') }}" data-i18n="nav.dash.crypto">Report Maintenance</a>
+          <li><a class="menu-item" href="{{ route('admin.report-maintenance') }}" data-i18n="nav.dash.crypto">Data Maintenance</a>
           </li>
           </ul>
       </li>
@@ -53,7 +53,7 @@
         <ul class="menu-content">
           <li class="menu-item"><a class="menu-item" href="{{ route('audit_asset.create') }}" data-i18n="nav.dash.ecommerce">Audit Asset</a>
           </li>
-          <li><a class="menu-item" href="{{ route('admin.report-audit') }}" data-i18n="nav.dash.crypto">Report Audit</a>
+          <li><a class="menu-item" href="{{ route('admin.report-audit') }}" data-i18n="nav.dash.crypto">Data Audit</a>
           </li>
         </ul>
         <li class="menu-item"><a href="{{ route('logout') }}"><i class="la la-power-off"></i><span class="menu-title" data-i18n="nav.scrumboard.main">Logout</span></a>

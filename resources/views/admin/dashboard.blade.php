@@ -38,15 +38,15 @@
             <div class="card-body">
               <div class="media d-flex">
                 <div class="media-body text-left">
-                  <h3 class="info">{{ $total_inactive_users }}</h3>
+                  <h3 class="danger">{{ $total_inactive_users }}</h3>
                   <h6>Pengguna Non Aktif</h6>
                 </div>
                 <div>
-                  <i class="icon-basket-loaded info font-large-2 float-right"></i>
+                  <i class="icon-user-unfollow danger font-large-2 float-right"></i>
                 </div>
               </div>
               <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
-                <div class="progress-bar bg-gradient-x-info" role="progressbar" style="width: 80%"
+                <div class="progress-bar bg-gradient-x-danger" role="progressbar" style="width: 80%"
                 aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
@@ -59,15 +59,15 @@
             <div class="card-body">
               <div class="media d-flex">
                 <div class="media-body text-left">
-                  <h3 class="warning">{{ $total_active_users }}</h3>
+                  <h3 class="success">{{ $total_active_users }}</h3>
                   <h6>Pengguna Aktif</h6>
                 </div>
                 <div>
-                  <i class="icon-pie-chart warning font-large-2 float-right"></i>
+                  <i class="icon-user-follow success font-large-2 float-right"></i>
                 </div>
               </div>
               <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
-                <div class="progress-bar bg-gradient-x-warning" role="progressbar" style="width: 65%"
+                <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 65%"
                 aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
@@ -80,15 +80,15 @@
             <div class="card-body">
               <div class="media d-flex">
                 <div class="media-body text-left">
-                  <h3 class="success">{{ $total_users }}</h3>
+                  <h3 class="info">{{ $total_users }}</h3>
                   <h6>Total Pengguna</h6>
                 </div>
                 <div>
-                  <i class="icon-user-follow success font-large-2 float-right"></i>
+                  <i class="icon-users info font-large-2 float-right"></i>
                 </div>
               </div>
               <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
-                <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 75%"
+                <div class="progress-bar bg-gradient-x-info" role="progressbar" style="width: 75%"
                 aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
@@ -101,15 +101,15 @@
             <div class="card-body">
               <div class="media d-flex">
                 <div class="media-body text-left">
-                  <h3 class="danger">{{ $total_admins }}</h3>
+                  <h3 class="primary">{{ $total_admins }}</h3>
                   <h6>Pengguna Level Admin</h6>
                 </div>
                 <div>
-                  <i class="icon-heart danger font-large-2 float-right"></i>
+                  <i class="icon-user-following primary font-large-2 float-right"></i>
                 </div>
               </div>
               <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
-                <div class="progress-bar bg-gradient-x-danger" role="progressbar" style="width: 85%"
+                <div class="progress-bar bg-gradient-x-primary" role="progressbar" style="width: 85%"
                 aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>

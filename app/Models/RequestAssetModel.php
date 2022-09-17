@@ -24,7 +24,8 @@ class RequestAssetModel extends Model
         'tgl_request',
         'created_at',
         'deleted_at',
-        'updated_at',       
+        'updated_at',
+        'user_name',
     ];
 
 }

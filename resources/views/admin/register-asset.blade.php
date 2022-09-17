@@ -41,8 +41,8 @@
                         with any heading tags. This form has the buttons on the bottom
                         left corner which is the default position.</p>
                     </div> --}}
-                    <form class="form">
-                    <div class="form-body">
+                    <form method="POST" action="{{ route('asset.store') }}" class="form" novalidate>@csrf
+                      <div class="form-body">
                         <div class="form-group">
                           <label for="companyName">Asset ID</label>
                           <input type="text" id="kode_asset" class="form-control" placeholder="Asset ID"
@@ -69,9 +69,9 @@
                             <div class="form-group">
                               <label for="id_jenis_asset">Asset Type</label>
                               <select id="id_jenis_asset" name="id_jenis_asset" class="form-control">
-                                <option value="none" selected="" disabled=""></option>
-                                <option value="Laptop">Laptop</option>
-                                <option value="PC Desktop">PC Desktop</option>
+                                @foreach($jenis as $data)
+                                <option value="{{$data->id}}">{{$data->jenis}}</option>
+                                @endforeach
                               </select>
                             </div>
                           </div>
@@ -146,15 +146,9 @@
                             <div class="form-group">
                               <label for="id_asset_location">Location</label>
                               <select id="id_asset_location" name="id_asset_location" class="form-control">
-                                <option value="none" selected="" disabled=""></option>
-                                <option value="CWJ 31">CWJ 31</option>
-                                <option value="CWJ 32">CWJ 32</option>
-                                <option value="CWJ 33">CWJ 33</option>
-                                <option value="CWJ 34">CWJ 34</option>
-                                <option value="Bandung Dago">Bandung Dago</option>
-                                <option value="Juanda">Juanda</option>
-                                <option value="Medan Imam Bonjol">Medan Imam Bonjol</option>
-                                <option value="Surabaya Galaxy">Surabaya Galaxy</option>
+                                @foreach($location as $data)
+                                <option value="{{$data->id}}">{{$data->location_name}}</option>
+                                @endforeach
                               </select>
                             </div>
                           </div>
@@ -162,20 +156,16 @@
                           <div class="form-group">
                               <label for="id_asset_status">Asset Status</label>
                               <select id="id_asset_status" name="id_asset_status" class="form-control">
-                                <option value="none" selected="" disabled=""></option>
-                                <option value="Active">Active</option>
-                                <option value="Available">Available</option>
-                                <option value="Maintenance">Maintenance</option>
-                                <option value="Broken">Broken</option>
-                                <option value="Decom">Decom</option>
-                                <option value="Active-Standalone">Active-Standalone</option>
+                                @foreach($status as $data)
+                                <option value="{{$data->id}}">{{$data->status}}</option>
+                                @endforeach
                               </select>
                             </div>
                           </div>
                         </div>
                         <div class="form-group">
-                          <label>Select File</label>
-                          <label id="projectinput7" class="file center-block">
+                          <label>Select File Image</label>
+                          <label id="image" class="file center-block" name="image">
                             <input type="file" id="file">
                             <span class="file-custom"></span>
                           </label>
